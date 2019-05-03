@@ -5,7 +5,12 @@
     <meta charset="utf-8" />
 
     <title>Tempo Mobile Store</title>
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link
       href="http://fonts.googleapis.com/css?family=Open+Sans:400"
       rel="stylesheet"
@@ -22,15 +27,9 @@
         <h1><a href="#">Tempo Mobile Store</a></h1>
       </div>
       <div class="right">
-        <button
-          type="button"
-          class="btn-cart"
-          data-toggle="modal"
-          data-target="#cart"
-        >
+        <button type="button" class="btn-cart" onClick="displayCart()">
           Cart (<span class="total-count"></span>)
         </button>
-        <button class="clear-cart btn-clear btn-danger">Clear Cart</button>
       </div>
     </header>
 
@@ -147,7 +146,7 @@
                 			<li><span>OS: </span>{{specs.os}}</li>
                 			<li><span>Camera: </span>{{specs.camera}} Mpx</li>
                 		</ul>
-                		<button onClick="addToCart()">Buy Now!</button>
+                		<button onClick="addToCart({{id}})">Buy Now!</button>
                 		<p class="product-price">{{price}}$</p>
 
                 	</li>
@@ -169,6 +168,18 @@
       </div>
 
       <div class="error page"><h3>Sorry, something went wrong :(</h3></div>
+    </div>
+    <div class="cart-overlay">
+      <div class="show-cart">
+        <button onClick="hideCart()">X</button>
+        <h2>Your Cart</h2>
+        <div class="cart-info"></div>
+        <div class="row p-30">
+          <div class="col-12">
+            <p><strong>Total: $</strong><span class="total-cart"></span></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

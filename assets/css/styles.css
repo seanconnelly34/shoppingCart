@@ -37,12 +37,18 @@ header a {
 }
 
 header h2.tempo {
-  float: right;
+  float: left;
   opacity: 0.9;
 }
 
 header h2.tempo:hover {
   opacity: 1;
+}
+
+header h1 {
+  float: right;
+  padding-top: 8px;
+  padding-left: 20px;
 }
 
 header h2.tempo a {
@@ -361,6 +367,27 @@ header h2.tempo a {
   opacity: 0;
   transition: 0.4s;
 }
+.cart-overlay {
+  opacity: 0;
+}
+.cart-overlay.visible {
+  display: block !important;
+  opacity: 1;
+  transition: 1.4s;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #635c5cb3;
+  position: fixed;
+}
+.cart-overlay button {
+  float: right;
+  background-color: #ccc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
 
 .single-product.visible .preview-large {
   opacity: 1;
@@ -446,6 +473,26 @@ header h2.tempo a {
 .show-cart li {
   display: flex;
 }
+
+.show-cart {
+  position: absolute;
+  top: 150px;
+  width: 40%;
+  background: white;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+}
+
+.show-cart h2 {
+  text-align: center;
+}
+.show-cart p strong {
+  font-size: 18px;
+}
 .card {
   margin-bottom: 20px;
 }
@@ -453,4 +500,7 @@ header h2.tempo a {
   width: 200px;
   height: 200px;
   align-self: center;
+}
+.p-30 {
+  padding: 7px 0px 5px 25px;
 }
